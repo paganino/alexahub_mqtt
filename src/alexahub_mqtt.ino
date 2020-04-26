@@ -40,14 +40,13 @@ void setup() {
   // Optionnal functionnalities of EspMQTTClient : 
   //client.enableDebuggingMessages(); // Enable debugging messages sent to serial output
    
-   webota.init(8081, "/update");  // change WebOTA default due to conflict with Espalexa internal  webserver
+   webota.init(8081, "/update");  // change WebOTA default webserver address 
+                                  // to avoid conflict with Espalexa webserver
 
  // Define your devices here (default max 10 devices). 
     espalexa.addDevice("lamp", firstLightChanged); //simplest definition, default state off
     espalexa.begin();
 }
-
-
 
 // This function is called once everything is connected (Wifi and MQTT)
 // WARNING : YOU MUST IMPLEMENT IT IF YOU USE EspMQTTClient
@@ -69,7 +68,7 @@ void firstLightChanged(uint8_t brightness) {
     //Serial.println(brightness);
       }
     else {
-      client.publish("/alexahub/divano", "0"); //  OFF
+      client.publish("/alexahub/lamp", "0"); //  OFF
     //Serial.println("OFF");
     }
   }
