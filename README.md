@@ -1,2 +1,4 @@
 # alexahub_mqtt
-simple esp8266  alexahub mqtt and OTA  
+
+Easy Alexa is an Arduino Sketch created using on the ESPalexa Library by @Aircoookie with which ESP8266 modules can be recognised as Amazon's Alexa compatible devices.
+
