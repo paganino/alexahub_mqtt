@@ -38,7 +38,7 @@ void setup() {
    Serial.begin(115200);
   
   // Optionnal functionnalities of EspMQTTClient : 
-   //client.enableDebuggingMessages(); // Enable debugging messages sent to serial output
+  //client.enableDebuggingMessages(); // Enable debugging messages sent to serial output
    
    webota.init(8081, "/update");  // change WebOTA default due to conflict with Espalexa internal  webserver
 
@@ -54,7 +54,6 @@ void setup() {
 void onConnectionEstablished(){}
 
 void loop() {
- 
   client.loop();
   espalexa.loop();
   webota.handle();
@@ -62,14 +61,17 @@ void loop() {
 }
 //our callback functions
 void firstLightChanged(uint8_t brightness) {
+
 //Serial.print("Device 1 changed to ");
 //do what you need to do here
     if (brightness) {
       client.publish("/alexahub/lamp", "1");  // ON
-//      Serial.println(brightness);
+    //Serial.println(brightness);
       }
     else {
       client.publish("/alexahub/divano", "0"); //  OFF
-//      Serial.println("OFF");
+    //Serial.println("OFF");
     }
   }
+
+
