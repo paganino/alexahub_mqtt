@@ -1,6 +1,5 @@
 # alexahub_mqtt
-alexahub_mqtt is a simple Arduino sketch to setup and control my esp8266 devices with Alexa, MQTT 
-and Node-RED
+alexahub_mqtt is a simple Arduino sketch to setup and control my esp8266 devices with Alexa and MQTT 
 
 created using:
 
